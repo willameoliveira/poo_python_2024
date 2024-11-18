@@ -1,5 +1,6 @@
 class Conta:
-    # construtor da classe. Ele cria os objetos da classe
+    
+    # construtor da classe. Ele cria um objeto da classe e o armaneza na variável self.
     def __init__(self, numero, saldo, data_abertura):
         self.numero = numero
         self.saldo = saldo
