@@ -1,9 +1,12 @@
+from datetime import datetime
+from cliente import Cliente
+
 class Conta:
     
-    # construtor da classe. Ele cria um objeto da classe e o armaneza na variável self.
-    def __init__(self, numero, saldo, data_abertura):
+    def __init__(self, numero, saldo, cliente:Cliente, data_abertura=datetime.now()):
         self.numero = numero
         self.saldo = saldo
+        self.cliente = cliente
         self.data_abertura = data_abertura
 
     def depositar(self, valor):
@@ -18,3 +21,10 @@ class Conta:
     
     def ver_saldo(self):
         print(f"Número: {self.numero}| Saldo: {self.saldo}")
+    
+    def transferir(self, conta_destino, valor):
+        if self.sacar(valor):
+            conta_destino.depositar(valor)
+            return True
+        else:
+            return False
