@@ -3,7 +3,7 @@ from cliente import Cliente
 
 class Conta:
     
-    def __init__(self, numero, saldo, cliente:Cliente, data_abertura=datetime.now()):
+    def __init__(self, numero, saldo, cliente:Cliente=None, data_abertura=datetime.now()):
         self.numero = numero
         self.saldo = saldo
         self.cliente = cliente

@@ -6,15 +6,15 @@ import os
 os.system("clear")
 
 def teste_data_abertura():
-    conta = Conta(1, 100, None)
+    conta = Conta(1, 100)
     print(f"Data abertura conta 1 é: {conta.data_abertura}")
 
-    conta2 = Conta(2, 100, None,datetime.fromisoformat("2023-11-20T08:30:00"))
+    conta2 = Conta(2, 100,data_abertura=datetime.fromisoformat("2023-11-20T08:30:00"))
     print(f"Data abertura conta 2 é: {conta2.data_abertura}")
 
 def teste_transferencia():
-    conta = Conta(1, 100, None)
-    conta2 = Conta(2, 100, None)
+    conta = Conta(1, 100)
+    conta2 = Conta(2, 100)
 
     if conta.transferir(conta2, 110):
         print("Transferência realizada com sucesso!")
