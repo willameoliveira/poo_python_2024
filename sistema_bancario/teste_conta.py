@@ -26,9 +26,12 @@ def teste_transferencia():
 
 def teste_conta_com_cliente():
     cliente1 = Cliente("José", "876.456.345-87", "Rua X Bairro Y", "86988995544", date.fromisoformat("2000-10-01"))
-    conta1 = Conta(1, cliente1, 100)
+    conta1 = Conta(1, 50, cliente1)
 
     data_abertura2 = datetime.fromisoformat("2024-10-05T09:40:00")
-    conta2 = Conta(2, cliente1, 200, data_abertura2)
+    conta2 = Conta(2, 100, cliente1, data_abertura2)
+
+    print(f"Titular da conta {conta1.numero} é {conta1.cliente.nome}")
+    print(f"Titular da conta {conta2.numero} é {conta2.cliente.nome}")
 
 teste_conta_com_cliente()

@@ -9,4 +9,9 @@ class Cliente:
         self.data_nasc = data_nasc
     
     def calcular_idade(self):
-        pass
+        hoje = date.today()
+        dt_nasc = self.data_nasc
+        idade = hoje.year - dt_nasc.year
+        if hoje.month <= dt_nasc.month and hoje.day < dt_nasc.day:
+            idade -= 1   
+        return idade
