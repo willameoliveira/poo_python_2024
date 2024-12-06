@@ -6,15 +6,15 @@ import os
 os.system("clear")
 
 def teste_data_abertura():
-    conta = Conta(1, 100)
+    conta = Conta(1, 100, None) #Passando None (Nada), como cliente. Pois ele não é necessário nesse teste.
     print(f"Data abertura conta 1 é: {conta.data_abertura}")
 
-    conta2 = Conta(2, 100,data_abertura=datetime.fromisoformat("2023-11-20T08:30:00"))
+    conta2 = Conta(2, 100, None, datetime.fromisoformat("2023-11-20T08:30:00"))
     print(f"Data abertura conta 2 é: {conta2.data_abertura}")
 
 def teste_transferencia():
-    conta = Conta(1, 100)
-    conta2 = Conta(2, 100)
+    conta = Conta(1, 100, None)
+    conta2 = Conta(2, 100, None)
 
     if conta.transferir(conta2, 110):
         print("Transferência realizada com sucesso!")
@@ -34,4 +34,6 @@ def teste_conta_com_cliente():
     print(f"Titular da conta {conta1.numero} é {conta1.cliente.nome}")
     print(f"Titular da conta {conta2.numero} é {conta2.cliente.nome}")
 
+teste_data_abertura()
+teste_transferencia()
 teste_conta_com_cliente()
