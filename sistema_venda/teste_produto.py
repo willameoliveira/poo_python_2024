@@ -13,7 +13,7 @@ print(f"Estoque de {produto1.descricao}: {produto1.estoque}")
 produto1.decrementar_estoque(20)
 print(f"Estoque de {produto1.descricao}: {produto1.estoque}")
 
-if not produto1.decrementar_estoque(31):
+if not produto1.decrementar_estoque(31): #if produto1.decrementar_estoque(31) == False
     print("Estoque insuficiente.")
 
 print(f"Estoque de {produto1.descricao}: {produto1.estoque}")
