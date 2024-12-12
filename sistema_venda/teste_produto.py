@@ -1,8 +1,8 @@
 from produto import Produto
 import os
-os.system("clear")
+os.system("clear") #limpar a tela do terminal
 
-produto1 = Produto("Mouse sem fio", 49.90, 30)
+produto1 = Produto(descricao="Mouse sem fio", valor=49.90, estoque=30)
 produto2 = Produto("Camisa M", 50)
 
 print(f"Estoque de {produto2.descricao}: {produto2.estoque}")
