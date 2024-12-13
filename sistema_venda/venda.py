@@ -19,7 +19,7 @@ class Venda:
 
     def __str__(self):
         return (f"""
-                Venda realizada em: {self.data_venda} 
+                Venda realizada em: {self.data_venda.strftime("%d/%m/%y %H:%M")} 
                 Produto: {self.produto.descricao}
                 Valor unitário: {self.produto.valor}
                 Quantidade de itens: {self.quantidade_vendida}
