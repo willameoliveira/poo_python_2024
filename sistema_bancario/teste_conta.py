@@ -34,6 +34,19 @@ def teste_conta_com_cliente():
     print(f"Titular da conta {conta1.numero} é {conta1.cliente.nome}")
     print(f"Titular da conta {conta2.numero} é {conta2.cliente.nome}")
 
-teste_data_abertura()
-teste_transferencia()
-teste_conta_com_cliente()
+def teste_conta_movimentacoes():
+    cliente1 = Cliente("José", "876.456.345-87", "Rua X Bairro Y", "86988995544", date.fromisoformat("2000-10-01"))
+    conta1 = Conta(numero=1, saldo=50, cliente=cliente1)
+    conta2 = Conta(numero=2, saldo=100, cliente=cliente1)
+    conta1.sacar(10)
+    conta1.depositar(30)
+    conta1.transferir(conta2, 10)
+    print("Extrato conta 1: ")
+    for movimentacao in conta1.ver_extrato():
+        print(movimentacao)
+
+    print("Extrato conta 2: ")
+    for movimentacao in conta2.ver_extrato():
+        print(movimentacao)    
+
+teste_conta_movimentacoes()
