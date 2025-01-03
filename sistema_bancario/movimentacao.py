@@ -10,6 +10,8 @@ class Movimentacao:
 
     def __str__(self):
         string = f"""{self.data.strftime('%d/%m/%y %H:%M')} - {self.nome} de R$ {self.valor}"""
-        if self.nome == "Transferência":
+        if self.nome == "Transferência enviada":
             string += f" para conta {self.conta_destino.numero}: {self.conta_destino.cliente.nome}"
+        elif self.nome == "Transferência recebida":
+            string += f" da conta {self.conta_destino.numero}: {self.conta_destino.cliente.nome}"    
         return string

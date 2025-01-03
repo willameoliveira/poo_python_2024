@@ -27,9 +27,11 @@ class Conta:
         print(f"Número: {self.numero}| Saldo: {self.saldo}")
     
     def transferir(self, conta_destino, valor):
-        if self.sacar(valor):
-            conta_destino.depositar(valor)
-            self.movimentacoes.append(Movimentacao("Transferência", valor, conta_destino))
+        if (valor <= self.saldo):
+            self.saldo -= valor
+            conta_destino.saldo += valor
+            self.movimentacoes.append(Movimentacao("Transferência enviada", valor, conta_destino))
+            conta_destino.movimentacoes.append(Movimentacao("Transferência recebida", valor, self))
             return True
         else:
             return False
