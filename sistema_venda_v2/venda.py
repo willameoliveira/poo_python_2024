@@ -16,6 +16,7 @@ class Venda:
     
     def adicionar_item(self, produto: Produto, quantidade: int):
         self._itens.append(Item_Venda(produto, quantidade))
+        produto.decrementar_estoque(quantidade)
 
     def calcular_valor_total(self) -> float:
         self._valor_total = sum(item.valor for item in self._itens)
