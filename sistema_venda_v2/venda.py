@@ -28,15 +28,21 @@ class Venda:
         return 0.0
 
     def __str__(self):
-        itens = ""
-        for item in self.itens:
-            itens += f"{item.produto.descricao}\t{item.quantidade}\tR$ {item.valor}\n"
+        if not self.itens:
+            return "Nenhum item na venda."
 
-        string = f"Venda realizada em: {self._data_venda.strftime('%d/%m/%y %H:%M')}\n" 
-        string += itens
-        string += f"Valor total: R$ {self.calcular_valor_total()}\n"
-        string += f"Forma de pagamento: {self._forma_pagamento}"
+        itens_str = "\n".join(
+            f"{item.produto.descricao}\t{item.quantidade}\t R$ {item.valor}"
+            for item in self.itens
+        )
+        
+        string = (
+            f"Venda realizada em: {self._data_venda.strftime('%d/%m/%Y %H:%M')}\n"
+            f"{itens_str}\n"
+            f"Valor total: R$ {self.calcular_valor_total()}\n"
+            f"Forma de pagamento: {self._forma_pagamento}"
+        )
         return string
-    
+        
 
 
