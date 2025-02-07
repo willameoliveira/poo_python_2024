@@ -18,3 +18,5 @@ for movimentacao in conta1.ver_extrato():
 print(f"\n extrato da conta {conta2.numero}: ")
 for movimentacao in conta2.ver_extrato():
     print(movimentacao)
+
+print(f"\nTotal de contas: {Conta.get_total_contas()}")

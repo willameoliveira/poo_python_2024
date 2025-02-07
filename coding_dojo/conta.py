@@ -1,11 +1,15 @@
 from movimentacao import Movimentacao 
 
 class Conta:
+    
+    _total_contas = 0
+
     def __init__(self, numero:int, saldo:float, cliente:str):
       self.numero = numero
       self.saldo = saldo
       self.cliente = cliente
       self.movimentacao = []
+      Conta._total_contas += 1
 
     def depositar(self, valor):
       if valor > 0:
@@ -34,5 +38,8 @@ class Conta:
            return False
         
     def ver_extrato(self)-> list[Movimentacao]:
-       
        return self.movimentacao
+    
+    @classmethod
+    def get_total_contas(cls):
+       return cls._total_contas
