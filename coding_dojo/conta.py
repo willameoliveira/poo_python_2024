@@ -8,11 +8,9 @@ class Conta:
       self.movimentacao = []
 
     def depositar(self, valor):
-       if valor > 0:
-        self.saldo += valor
-        self.movimentacao.append(Movimentacao("Deposito", valor))
-       else:
-          ("Não foi possivel o deposito")
+      if valor > 0:
+         self.saldo += valor
+         self.movimentacao.append(Movimentacao("Deposito", valor))
 
     def ver_saldo(self):
         print(f"numero da conta:{self.numero} | cliente:{self.cliente} | saldo:R${self.saldo}")
