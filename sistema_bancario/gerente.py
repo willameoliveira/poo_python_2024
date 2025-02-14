@@ -5,3 +5,6 @@ class Gerente(Funcionario):
         super().__init__(nome, cpf, salario)
         self._senha = senha
         self._qtd_funcionarios = qtd_funcionarios
+    
+    def get_bonificacao(self):
+        return self._salario * 0.15
